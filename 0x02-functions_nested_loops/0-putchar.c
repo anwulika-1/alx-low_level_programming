@@ -1,20 +1,21 @@
 #include "main.h"
 /**
- * main - Print "Holberton" followed by a new line.
- * Description: You are not allowed to include standard libraries.
- * Return: 0
+ * main - Prints _putchar as a message.
+ *
+ * Return: Always 0 (Success)
  */
+
 int main(void)
 {
-int c = 0;
-char holberton[10] = "_putchar\n";
+	int str[] = {95, 112, 117, 116, 99, 104, 97, 114};
+	int count, sz;
 
-while (c < 9)
-{
-_putchar(holberton[c]);
-c++;
+	sz = sizeof(str) / sizeof(int);
+	for (count = 0; count < sz; count++)
+	{
+		_putchar(str[count]);
+	}
+
+	_putchar('\n');
+	return (0);
 }
-return (0);
-}
-
-

@@ -1,1 +1,1 @@
-My readme for 0-putchar.c
+my 0x02-functions_nested_loops
