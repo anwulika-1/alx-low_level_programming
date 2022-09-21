@@ -1,0 +1,1 @@
+this is my second pointers arrays and strings assignment
