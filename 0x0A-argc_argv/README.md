@@ -1,1 +1,1 @@
-my readme file for 0x0A-argc_argv task
+my readme file for 0x0A. C - argc, argv c task
