@@ -5,9 +5,9 @@
   *@min: minimum value.
   *@max: maximum value.
   *
-  * *Return: pointer to newly created array.
-  * NULL if malloc fails.
-  * NULL if min > max.
+  *Return: pointer to newly created array.
+  *NULL if malloc fails.
+  *NULL if min > max.
   */
 int *array_range(int min, int max)
 {
@@ -19,8 +19,8 @@ int *array_range(int min, int max)
 	if (min > max)
 		return (NULL);
 
-	range = ((max +1) -min);
-	
+	range = ((max + 1) - min);
+
 	p = malloc(range * sizeof(int));
 
 	if (p == NULL)
