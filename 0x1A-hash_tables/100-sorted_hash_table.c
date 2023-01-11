@@ -240,14 +240,14 @@ void hash_table_print(const hash_table_t *ht)
 	temp = ht->shead;
 	while (temp)
 	{
-		if (temp->snext == NULL)
+		if (temp->next == NULL)
 		{
 			printf("'%s': ", temp->key);
 			printf("'%s'", temp->value);
 			break;
 		}
 		printf("'%s': '%s', ", temp->key, temp->value);
-		temp = temp->snext;
+		temp = temp->next;
 	}
 	printf("}\n");
 }
