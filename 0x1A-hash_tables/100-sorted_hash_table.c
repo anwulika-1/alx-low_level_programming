@@ -8,19 +8,19 @@
  * shash_table_t, returns NULL if an error occurs
  */
 
-shash_table_t *shash_table_create(unsigned long int size)
+hash_table_t *hash_table_create(unsigned long int size)
 {
-	shash_table_t *table;
+	hash_table_t *table;
 
 	if (size <= 0)
 		return (NULL);
 
-	table = malloc(sizeof(shash_table_t));
+	table = malloc(sizeof(hash_table_t));
 
 	if (table == NULL)
 		return (NULL);
 
-	table->array = calloc(size, sizeof(shash_node_t *));
+	table->array = calloc(size, sizeof(hash_node_t *));
 
 	if (table->array == NULL)
 	{
@@ -42,11 +42,11 @@ shash_table_t *shash_table_create(unsigned long int size)
  * Return: shash_node_t pointer address if successful, NULL otherwise
  */
 
-shash_node_t *make_node(const char *key, const char *value)
+hash_node_t *make_node(const char *key, const char *value)
 {
-	shash_node_t *new;
+	hash_node_t *new;
 
-	new = malloc(sizeof(shash_node_t));
+	new = malloc(sizeof(hash_node_t));
 
 	if (new == NULL)
 		return (NULL);
@@ -66,7 +66,7 @@ shash_node_t *make_node(const char *key, const char *value)
  * Return: 1 if the head node was updated or created, 0 otherwise
  */
 
-int assign_head(shash_node_t *new, shash_table_t *ht)
+int assign_head(shash_node_t *new, hash_table_t *ht)
 {
 	shash_node_t *temp;
 
@@ -104,7 +104,7 @@ int assign_head(shash_node_t *new, shash_table_t *ht)
  * Return: Void
  */
 
-void assign(shash_node_t *new, shash_table_t *ht)
+void assign(hash_node_t *new, hash_table_t *ht)
 {
 	shash_node_t *temp;
 	int status;
@@ -147,7 +147,7 @@ void assign(shash_node_t *new, shash_table_t *ht)
  * Return: 1 if success, 0 otherwise
  */
 
-int shash_table_set(shash_table_t *ht, const char *key, const char *value)
+int hash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
 	shash_node_t *head, *new, *temp;
 	unsigned long int index;
@@ -199,7 +199,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
-	shash_node_t *temp;
+	hash_node_t *temp;
 	unsigned long int index;
 
 	if (ht == NULL || key == NULL)
@@ -231,7 +231,7 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 
 void shash_table_print(const shash_table_t *ht)
 {
-	shash_node_t *temp;
+	hash_node_t *temp;
 
 	if (ht == NULL)
 		return;
@@ -260,7 +260,7 @@ void shash_table_print(const shash_table_t *ht)
 
 void shash_table_print_rev(const shash_table_t *ht)
 {
-	shash_node_t *temp;
+	hash_node_t *temp;
 
 	if (ht == NULL)
 		return;
@@ -287,7 +287,7 @@ void shash_table_print_rev(const shash_table_t *ht)
  * Return: Void
  */
 
-void shash_table_delete(shash_table_t *ht)
+void shash_table_delete(hash_table_t *ht)
 {
 	unsigned long int i = 0;
 	shash_node_t *temp, *temp2;
