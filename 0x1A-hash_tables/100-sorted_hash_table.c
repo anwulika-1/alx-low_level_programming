@@ -229,7 +229,7 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
  * Return: Void
  */
 
-void shash_table_print(const shash_table_t *ht)
+void hash_table_print(const hash_table_t *ht)
 {
 	hash_node_t *temp;
 
@@ -258,7 +258,7 @@ void shash_table_print(const shash_table_t *ht)
  * Return: Void
  */
 
-void shash_table_print_rev(const shash_table_t *ht)
+void shash_table_print_rev(const hash_table_t *ht)
 {
 	hash_node_t *temp;
 
@@ -290,7 +290,7 @@ void shash_table_print_rev(const shash_table_t *ht)
 void shash_table_delete(hash_table_t *ht)
 {
 	unsigned long int i = 0;
-	shash_node_t *temp, *temp2;
+	hash_node_t *temp, *temp2;
 
 	for (i = 0; i < ht->size; i++)
 	{
