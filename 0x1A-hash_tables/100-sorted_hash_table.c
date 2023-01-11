@@ -121,7 +121,7 @@ void assign(hash_node_t *new, hash_table_t *ht)
 		if (strcmp(new->key, temp->key) < 0)
 		{
 			new->sprev = temp->sprev;
-			new->snext = temp;
+			new->next = temp;
 			temp->sprev->snext = new;
 			temp->sprev = new;
 			return;
